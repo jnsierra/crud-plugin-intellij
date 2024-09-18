@@ -13,12 +13,12 @@ public class LeftWindowPanel {
 
     public LeftWindowPanel(ToolWindow toolWindow) {
         TableDataInformation tableDataInformation = new TableDataInformation();
-        PanelManageTable panelManageTable = new PanelManageTable();
+        PanelManageTable panelManageTable = new PanelManageTable(tableDataInformation);
         this.toolWindow = toolWindow;
         this.mainPanel = new JPanel(new BorderLayout());
         JPanel topPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
         JTextField inputField = new JTextField(20);
-        JLabel label = new JLabel("Nombre Tabla");
+        JLabel label = new JLabel("Nombre Tabla:");
 
         topPanel.add(label);
         topPanel.add(inputField);
