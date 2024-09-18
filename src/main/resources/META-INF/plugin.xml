@@ -9,10 +9,14 @@
     <resource-bundle>messages.MyBundle</resource-bundle>
 
     <extensions defaultExtensionNs="com.intellij">
-        <toolWindow factoryClass="com.github.jnsierra.crudpluginintellij.toolWindow.MyToolWindowFactory" id="MyToolWindow"/>
+        <toolWindow factoryClass="com.jnsierra.PrincipalToolWindowFactory"
+                    id="Crud Template"
+                    anchor="bottom"
+        />
     </extensions>
 
     <applicationListeners>
-        <listener class="com.github.jnsierra.crudpluginintellij.listeners.MyApplicationActivationListener" topic="com.intellij.openapi.application.ApplicationActivationListener"/>
+        <listener class="com.github.jnsierra.crudpluginintellij.listeners.MyApplicationActivationListener"
+                  topic="com.intellij.openapi.application.ApplicationActivationListener"/>
     </applicationListeners>
 </idea-plugin>
