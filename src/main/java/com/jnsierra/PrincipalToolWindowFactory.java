@@ -11,16 +11,17 @@ import org.jetbrains.annotations.NotNull;
 public class PrincipalToolWindowFactory implements ToolWindowFactory {
     @Override
     public void createToolWindowContent(@NotNull Project project, @NotNull ToolWindow toolWindow) {
-        LeftWindowPanel leftWindowPanel = new LeftWindowPanel(toolWindow);
+        LeftWindowPanel leftWindowPanel = new LeftWindowPanel(toolWindow, this);
 
         JBSplitter splitPanel = new JBSplitter(false, 0.5f);
         splitPanel.setFirstComponent(leftWindowPanel.getMainPanel());
-        //splitPanel.setSecondComponent(rightWindowPanel.getMainPanel());
-
-        //leftWindowPanel.setRightWindowPanel(rightWindowPanel);
 
         ContentFactory contentFactory = ContentFactory.getInstance();
         Content content = contentFactory.createContent(splitPanel, "", false);
         toolWindow.getContentManager().addContent(content);
+    }
+
+    public void executeActionListener(){
+        System.out.println("Genero Liquidbase");
     }
 }
